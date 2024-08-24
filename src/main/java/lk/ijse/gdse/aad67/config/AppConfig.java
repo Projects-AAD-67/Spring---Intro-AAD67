@@ -8,8 +8,8 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-//@ComponentScan(basePackages = "lk.ijse.gdse.aad67")
-@ComponentScan(basePackageClasses = {LifeCycle.class})
+@ComponentScan(basePackages = "lk.ijse.gdse.aad67")
+//@ComponentScan(basePackageClasses = {LifeCycle.class})
 public class AppConfig {
 //    @Bean
 //   public OtherObj otherObj(){
