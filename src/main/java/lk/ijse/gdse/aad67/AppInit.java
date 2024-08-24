@@ -9,11 +9,11 @@ public class AppInit {
         var ctx = new AnnotationConfigApplicationContext();
         ctx.register(AppConfig.class);
         ctx.refresh();
-        var myObj = ctx.getBean("myObj");
-        System.out.println(myObj);
-        ConfigurableListableBeanFactory beanFactory = ctx.getBeanFactory();
-        System.out.println("Is bean singleton: "+beanFactory.isSingleton("myObj"));
+      //  var myObj = ctx.getBean("myObj");
+        //ConfigurableListableBeanFactory beanFactory = ctx.getBeanFactory();
+        //System.out.println("Is bean singleton: "+beanFactory.isSingleton("myObj"));
         ctx.registerShutdownHook();
+
 
     }
 }
