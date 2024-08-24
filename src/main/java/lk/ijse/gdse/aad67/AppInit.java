@@ -1,5 +1,6 @@
 package lk.ijse.gdse.aad67;
 
+import lk.ijse.gdse.aad67.aop.Transaction;
 import lk.ijse.gdse.aad67.config.AppConfig;
 import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -9,9 +10,9 @@ public class AppInit {
         var ctx = new AnnotationConfigApplicationContext();
         ctx.register(AppConfig.class);
         ctx.refresh();
-      //  var myObj = ctx.getBean("myObj");
-        //ConfigurableListableBeanFactory beanFactory = ctx.getBeanFactory();
-        //System.out.println("Is bean singleton: "+beanFactory.isSingleton("myObj"));
+        Transaction transaction = (Transaction) ctx.getBean("transaction");
+        transaction.startTransaction();
+        transaction.endTransaction();
         ctx.registerShutdownHook();
 
 
