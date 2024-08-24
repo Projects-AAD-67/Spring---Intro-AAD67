@@ -8,19 +8,15 @@ import org.springframework.stereotype.Component;
 @Component
 public class Eranga {
 
-    private GoodGirl goodGirl;
+    private final GoodGirl goodGirl;
 
-//    @Autowired
-//    public Eranga(GoodGirl goodGirl) {
-//        this.goodGirl = goodGirl;
-//    }
     @Autowired
-    public void setGoodGirl(GoodGirl goodGirl) {
+    public Eranga(GoodGirl goodGirl) {
         this.goodGirl = goodGirl;
     }
+
    @PostConstruct
     public void init(){
-        System.out.println(goodGirl);
         goodGirl.love();
     }
 }
